@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('content');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->unsignedBigInteger('user_id')->constrained()->onDelete('cascade');
-            $table->unsignedBigInteger('category_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->constrained()->onDelete('cascade')->nullable();
+            $table->unsignedBigInteger('category_id')->constrained()->onDelete('cascade')->nullable();
             $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
